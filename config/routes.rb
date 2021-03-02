@@ -3,11 +3,9 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  resources :products, only: %i[index show new create]
+  # resources :products, only: %i[index add]
 
-  post 'products/add' do
-    @product = "horse"
-    @product.add_to_cart
-  end
+  post '/' => "products#add"
+  
 
 end

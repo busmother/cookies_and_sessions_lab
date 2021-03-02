@@ -1,11 +1,11 @@
-<%= form_for (@product) do |f|%>
-<label>Product name:</label><br>
-<%= f.text_field :name %>
-<%= f.submit%>
+<%= form_tag action: 'add', controller: 'products', method: 'post' do%>
+<label>Product:</label><br>
+<input name='product'>
+<%= submit_tag 'add to cart'%>
 <%end%>
 
-<%= @cart.each do |c|%>
 <ul>
-<li><%= c.name%></li>
-</ul>
+<%cart.each do |p|%>
+<li><%=p%></li>
 <%end%>
+</ul>

@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
     def index
         # @product = Product.new
-        @cart = cart
+        # @cart = cart
     end
 
     def add
-        @product = Product.create(name: params[:name])
-        @product.add_to_cart
+        # byebug
+        cart << params[:product]
+        render :index
     end
 end
